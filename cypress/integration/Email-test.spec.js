@@ -1,13 +1,8 @@
-
 import EmailPage from '../support/PageObjects/EmailPage.js'
 /// <reference types="cypress"/>
-
-//check for null and maximum text
-
-
-describe('Text Code URL', () => {
+describe('QRCode for Email', () => {
   const emailPage =new EmailPage();
-  it('Generate Basic QR Code for URL', () => {
+  it('Generate QR Code for Email', () => {
    cy.visit('/');
    let mail='sumit@rediffmail.com'
    let subject='Hello'

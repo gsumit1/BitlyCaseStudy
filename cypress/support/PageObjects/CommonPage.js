@@ -75,6 +75,11 @@ getQRCodeContent(){
     return cy.get('.card-img-top').readCode();
 }
 
+openTab(tabName){
+    cy.xpath("//a[contains(.,'"+tabName+"')]").click();
+
+}
+
 openTextTab(){
     cy.get(lnk_textTab).click();
 
