@@ -64,5 +64,26 @@ it('Generate QR Code for URL with template', () => {
 });
 
 
+it('Generate QR Code for URL with customized design', () => {
+  cy.visit('https://www.qrcode-monkey.com/#url');
+  let url="https://www.lumen.com";
+  urlPage.submitQRCode(url);
+  urlPage.setCustomizedDesign("circle-zebra","frame4","ball5")
+  urlPage.generateQRCode();
+  urlPage.getQRCodeContent().should('have.property', 'text', url);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 });;
 

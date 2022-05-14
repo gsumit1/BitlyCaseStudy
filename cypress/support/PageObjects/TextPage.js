@@ -1,8 +1,7 @@
 import HomePage from "./CommonPage.js";
 
-const tbx_qrCodeEmail='#qrcodeEmail';
-const tbx_subject='#qrcodeEmailSubject'
-const tbx_body='#qrcodeEmailMessage'
+const tbx_yourText='#qrcodeText';
+const lbl_error='.has-danger .error-text'; 
 
 class TextPage extends HomePage {
     
@@ -10,22 +9,15 @@ class TextPage extends HomePage {
         super()
       }
 
-    submitEmail(email, subject, body){
-        const qrCodeEmail=cy.get(tbx_qrCodeEmail);
+    submitText(text){
+        const qrCodeEmail=cy.get(tbx_yourText);
         qrCodeEmail.clear();
-        qrCodeEmail.type(email)
-
-        const subjecttbx=cy.get(tbx_subject);
-        
-        subjecttbx.clear();
-        subjecttbx.type(subject)
-        
-        const bodytbx=cy.get(tbx_body);
-
-        bodytbx.clear();
-        bodytbx.type(body)
+        qrCodeEmail.type(text)
     }
 
-
+    getErrorCode(){
+        const lblErrorCode_content=cy.get(lbl_error);
+        return lblErrorCode_content
+    }
 }
 export default TextPage;

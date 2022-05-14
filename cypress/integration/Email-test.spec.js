@@ -1,22 +1,22 @@
 
-import TextPage from '../support/PageObjects/TextPage.js'
+import EmailPage from '../support/PageObjects/EmailPage.js'
 /// <reference types="cypress"/>
 
 //check for null and maximum text
 
 
 describe('Text Code URL', () => {
-  const textPage =new TextPage();
+  const emailPage =new EmailPage();
   it('Generate Basic QR Code for URL', () => {
-   cy.visit('https://www.qrcode-monkey.com/#url');
+   cy.visit('/');
    let mail='sumit@rediffmail.com'
    let subject='Hello'
    let body="Testing String";
    let expected='mailto:'+mail+'?subject='+subject+'&body='+body
-   textPage.openEmailTab();
-   textPage.submitEmail(mail,subject, body)
-   textPage.generateQRCode();
-   textPage.getQRCodeContent().should('have.property', 'text', expected);
+   emailPage.openEmailTab();
+   emailPage.submitEmail(mail,subject, body)
+   emailPage.generateQRCode();
+   emailPage.getQRCodeContent().should('have.property', 'text', expected);
   });
 
 });

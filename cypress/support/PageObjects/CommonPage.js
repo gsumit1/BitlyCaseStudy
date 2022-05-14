@@ -5,16 +5,29 @@ const lnk_emailTab='[title=\'Create QR Code for an Email\']';
 const bar_setColor='.accordion > div:nth-of-type(2) > div > h3';
 const tbx_singleForegroundColor='.color-group-body > div:nth-of-type(4) > div > color-picker > div > div > input';
 const tbx_bkgroundColor='.overflow-visible > div:nth-of-type(3) > div > div > color-picker > div > div > input'
-const rbn_singleColor='[name=\'colorMode\']'
 const img_qrCode='body > div.wrapper.ng-scope > div.qrcode-generator.ng-scope > div.settings > div > div > div.col-md-5.col-lg-4.settings-download > div.preview > img'
 const bar_logoImage='.accordion > div:nth-of-type(3) > div > h3'
 const lynk_templateSetting='//button[@type=\'button\'][contains(.,\'QR Code Templates\')]';
-
-const errorMessageQR='.alert-danger';
+const lbl_errorMessageQR='.alert-danger';
+const bar_customizedDesign="//h3[@class='title'][contains(.,'Customize Design')]";
 
 class HomePage{
     constructor() {}
 
+
+
+setCustomizedDesign(bodyShape,eyeFrameShape, eyeBallShape){
+    cy.xpath(bar_customizedDesign).click();
+    cy.xpath("//i[@class='sprite sprite-body sprite-"+bodyShape+"']").click();
+    cy.xpath("//i[@class='sprite sprite-"+eyeFrameShape+"']").click();
+    cy.xpath("//i[@class='sprite sprite-"+eyeBallShape+"']").click();
+}
+
+generateQRCode(){
+    cy.intercept('https://api.qrcode-monkey.com/qr/custom').as('postRequest')
+    cy.get('#button-create-qr-code').click();
+    cy.wait('@postRequest').its('response.statusCode').should('eq', 200)
+}
 
 setTemplate(brandName){
     cy.xpath(lynk_templateSetting).click();
@@ -54,13 +67,6 @@ validateImageInsideQRCode(brandName){
     })
 }
 
-    
-generateQRCode(){
-    cy.intercept('https://api.qrcode-monkey.com/qr/custom').as('postRequest')
-    cy.get('#button-create-qr-code').click();
-    cy.wait('@postRequest').its('response.statusCode').should('eq', 200)
-}
-
 clickQRCodeBtn(){
     cy.get('#button-create-qr-code').click();
 }
@@ -80,8 +86,9 @@ openEmailTab(){
 
 
 getErrorMessageForQRCode(){
-    return cy.get(errorMessageQR);
+    return cy.get(lbl_errorMessageQR);
 }
+
 
 }
 

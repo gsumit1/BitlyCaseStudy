@@ -1,34 +1,34 @@
-
-//import HomePage from '../support/PageObjects/HomePage.js';
 import TextPage from '../support/PageObjects/TextPage.js'
 /// <reference types="cypress"/>
 
-//check for null and maximum text
-
-
 describe('Generate QR Code for Text', () => {
   const textPage =new TextPage();
-  it('Generate Basic QR Code for URL', () => {
-   cy.visit('https://www.qrcode-monkey.com/#url');
-   let text="Testing String";
-   textPage.openTextTab();
-   textPage.submitText(text);
-   textPage.generateQRCode();
-   textPage.getQRCodeContent().should('have.property', 'text', text);
-  });
-
-
-
-  describe('Maximum Text Code URL', () => {
-    const textPage =new TextPage();
-    it('Generate Basic QR Code for URL', () => {
-     cy.visit('https://www.qrcode-monkey.com/#url');
-     let text="Testing String";
-     textPage.openTextTab();
-     textPage.submitText(text);
-     textPage.generateQRCode();
-     textPage.getQRCodeContent().should('have.property', 'text', text);
+  it('Generating QR Code for minimum characters(22) as well as maximum characters(400)', () => {
+    cy.fixture('DateDataFolder/textData').then(testdata => {
+        testdata.forEach(data => {                  
+            cy.visit('https://www.qrcode-monkey.com/#url');
+            var textString=data.text;
+            textPage.openTextTab();
+            textPage.submitText(textString);
+            textPage.generateQRCode();
+            textPage.getQRCodeContent().should('have.property', 'text', textString);
+        });
     });
+  }); 
 
+  it('No QR Code should be generated for blank text', () => {
+    cy.visit('https://www.qrcode-monkey.com/#url');
+    textPage.openTextTab();
+    textPage.clickQRCodeBtn();
+    textPage.getErrorCode().should('contain.text','This field is required');
+    textPage.getErrorMessageForQRCode('have.text','There are errors you have to fix before generating.')
+   });
 });
+
+
+
+ 
+
+
+
 
