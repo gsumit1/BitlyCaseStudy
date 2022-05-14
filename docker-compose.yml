@@ -1,0 +1,14 @@
+version: '3.2'
+services:
+  cypress:
+    image: "cypress/included:4.4.0"
+    build: .
+    container_name: cypress
+    environment:
+      - CYPRESS_baseUrl=https://www.qrcode-monkey.com
+    command: npx cypress run
+    working_dir: /e2e
+    volumes:
+      - ./:/e2e
+      - ./cypress:/e2e/cypress
+      - ./cypress.json:/e2e/cypress.json

@@ -1,0 +1,26 @@
+{
+  "name": "propine",
+  "version": "1.0.0",
+  "description": "Propine Task ",
+  "main": "/cypress/integration/Propine-UI-test.spec.js",
+  "scripts": {
+    "lint": "eslint ./*.js ./*/src/*.js",
+    "start": "node index",
+    "test:e2e:test": "cypress run"
+  },
+  "author": "Sumit Ghosh",
+  "license": "ISC",
+  "dependencies": {
+    "@zxing/browser": "^0.1.1",
+    "@zxing/library": "^0.19.1",
+    "axios": "^0.21.1",
+    "cypress": "^6.9.1"
+  },
+  "devDependencies": {
+    "cypress-xpath": "^1.6.2",
+    "eslint": "^7.21.0",
+    "mountebank": "^2.4.0",
+    "node-fetch": "^2.6.1",
+    "underscore": "^1.12.0"
+  }
+}
