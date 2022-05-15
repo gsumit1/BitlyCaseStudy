@@ -6,7 +6,7 @@ const dev = {
 };
 
 const test = {
-   url: 'https://vast-dawn-73245.herokuapp.com/'
+   url: 'https://www.qrcode-monkey.com/'
 };
 
 const config = {

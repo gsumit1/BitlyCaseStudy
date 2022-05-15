@@ -15,7 +15,7 @@ submitPhoneNumber(text){
         qrCodeEmail.type(text)
     }
 
-    getErrorCode(){
+getErrorCode(){
         const lblErrorCode_content=cy.get(lbl_error);
         return lblErrorCode_content
     }

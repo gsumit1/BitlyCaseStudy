@@ -1,5 +1,6 @@
 /// <reference types="cypress"/>
 require('cypress-xpath')
+
 const lnk_textTab='[title=\'Create QR Code for a Text\']';
 const lnk_emailTab='[title=\'Create QR Code for an Email\']';
 const bar_setColor='.accordion > div:nth-of-type(2) > div > h3';

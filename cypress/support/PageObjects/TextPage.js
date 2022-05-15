@@ -9,13 +9,13 @@ class TextPage extends HomePage {
         super()
       }
 
-    submitText(text){
+submitText(text){
         const qrCodeEmail=cy.get(tbx_yourText);
         qrCodeEmail.clear();
         qrCodeEmail.type(text)
     }
 
-    getErrorCode(){
+getErrorCode(){
         const lblErrorCode_content=cy.get(lbl_error);
         return lblErrorCode_content
     }
