@@ -34,5 +34,7 @@ Steps to run the scripts on the test environment
 Running docker-compose up
 
 #### Test Run Status
-
+<p align="center">
+<img src="https://github.com/gsumit1/BitlyCaseStudy/blob/master/TestExecutionResult.JPG">
+</p>
 <hr>
