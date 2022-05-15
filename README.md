@@ -2,7 +2,7 @@
 
 #####   Smoke Test Functionalities 
 
-**QR Code** is most frequently used to generate `URL, Text, Email, Phone & Address`. So I have created the smoke cases to test the generating of QR Code for URL, Text, Email, Phone & Address. I have also included the additional customization scenarios as a part of smoke test scenarios.
+**QR Code** is most frequently used to generate `URL, Text, Email, Phone & Address`. So I have created the smoke cases to test the generation of QR Code for URL, Text, Email, Phone & Addresses. I have also included the additional customization scenarios as a part of the smoke test scenarios.
  
 Areas	| Scenarios
 --------|-----------
@@ -17,18 +17,18 @@ Address | 1. Generate QR Code for Address
 #### Code Design  
 
 - I have followed the page object model. All the common elements & methods are part of CommonPage.js 
-- Each of the features such as `URL, Text, Email, Phone & Address` has individual pages( e.g. URLPage.js, TextPage.js etc) and extends to CommonPage.js 
-- I have created the feature specific Test (e.g., URL-test.spec.js) which holds all the tests. 
+- Each of the features such as `URL, Text, Email, Phone & Address` has individual pages( e.g. URLPage.js, TextPage.js ,etc) and extends to CommonPage.js 
+- I have created the feature-specific Test (e.g., URL-test.spec.js) which holds all the tests. 
 - I have used fixtures to adopt data driver where ever it is useful 
 - @zxing/library is used to validate the content of the generated QR Code 
-- validateColorOfQRCode, validateImageInsideQRCode methods are used to validate the background, foreground, brand log of the generated QR Code. 
+- validateColorOfQRCode, validateImageInsideQRCode methods are used to validate the background, foreground, and brand log of the generated QR Code. 
 
 <hr>
 
-#### Step to run script
+#### Step to run the script
 Steps to run the scripts on the test environment
 *    Install the node modules by running ``` npm install ```
-*    open a another terminal to start the tests: ``` npm run test:e2e:test ```
+*    open another terminal to start the tests: ``` npm run test:e2e:test ```
 
 #### Docker:
 Running docker-compose up

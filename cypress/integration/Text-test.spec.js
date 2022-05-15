@@ -4,7 +4,7 @@ import TextPage from '../support/PageObjects/TextPage.js'
 describe('Generate QR Code for Text', () => {
   const textPage =new TextPage();
   it('Generating QR Code for minimum characters(22) as well as maximum characters(400)', () => {
-    cy.fixture('DateDataFolder/textData').then(testdata => {
+    cy.fixture('DataFolder/textData').then(testdata => {
         testdata.forEach(data => {                  
             cy.visit('https://www.qrcode-monkey.com/#url');
             var textString=data.text;
