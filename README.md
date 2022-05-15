@@ -1,31 +1,15 @@
 # Britly Interview Task
-##### Problem Statement
-<hr>
-#####   Smoke Test Functionalities  
 
+#####   Smoke Test Functionalities 
+<hr>    
+ 
 Areas	| Scenarios
 --------|-----------
-URL     |Generate Basic QR Code for URL 
-        |QR Code should not be generated for blank url  
-        |QR Code should not be generated for incorrect url  
-        |Generate Basic QR Code for URL in customized color 
-        |Generate Basic QR Code for URL with twitter logo image and customized color    
-        |Generate QR Code for URL with template 
-        |Generate QR Code for URL with customized design    
-Text    |Generating QR Code for minimum characters(22) as well as maximum characters(400)   
-        |No QR Code should be generated for blank text  
-Email   |Generate QR Code for Email 
-Phone   |Generate QR Code for phone number  
-Address |Generate QR Code for Address   
-
-
-
-
-
-
-
-
-
+URL     | 1. Generate Basic QR Code for URL <br> 2. QR Code should not be generated for blank url <br> 3.QR Code should not be generated for incorrect url  <br> 4.Generate Basic QR Code for URL in customized color <br> 5. Generate Basic QR Code for URL with twitter logo image and customized color  <br>  6. Generate QR Code for URL with template <br> 7. Generate QR Code for URL with customized design   
+Text    | 1. Generating QR Code for minimum characters(22) as well as maximum characters(400)   <br> 2. No QR Code should be generated for blank text  
+Email   | 1.Generate QR Code for Email 
+Phone   | 1.Generate QR Code for phone number  
+Address | 1.Generate QR Code for Address   
 
 <hr>
 
