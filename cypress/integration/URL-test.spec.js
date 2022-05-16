@@ -4,7 +4,7 @@ import URLPage from '../support/PageObjects/URLPage.js'
 
 describe('QR Code URL', () => {
   const urlPage =new URLPage();
-  it('Generate Basic QR Code for URL', () => {
+  it('Generate QR Code for URL', () => {
    cy.visit('/#url');
    let url="https://www.lumen.com";
    urlPage.submitQRCode(url);
@@ -31,7 +31,7 @@ describe('QR Code URL', () => {
    });
    
 
-   it('Generate Basic QR Code for URL in customized color', () => {
+   it('Generate QR Code for URL in customized color', () => {
     cy.visit('https://www.qrcode-monkey.com/#url');
     let url="https://www.lumen.com";
     urlPage.submitQRCode(url);
@@ -41,7 +41,7 @@ describe('QR Code URL', () => {
     urlPage.validateColorOfQRCode( 'rgb(160,234,188)', 'rgb(27, 15, 239)')
 });
 
-it('Generate Basic QR Code for URL with twitter logo image and customized color', () => {
+it('Generate QR Code for URL with twitter logo image and customized color', () => {
   cy.visit('https://www.qrcode-monkey.com/#url');
   let url="https://www.lumen.com";
   urlPage.submitQRCode(url);
@@ -72,18 +72,6 @@ it('Generate QR Code for URL with customized design', () => {
   urlPage.generateQRCode();
   urlPage.getQRCodeContent().should('have.property', 'text', url);
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 });;
 
