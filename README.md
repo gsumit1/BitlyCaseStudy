@@ -1,4 +1,4 @@
-# Britly Interview Task
+# Bitly Interview Task
 
 #####   Smoke Test Functionalities 
 
