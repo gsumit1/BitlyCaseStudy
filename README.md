@@ -30,9 +30,6 @@ Steps to run the scripts on the test environment
 *    Install the node modules by running ``` npm install ```
 *    open another terminal to start the tests: ``` npm run test:e2e:test ```
 
-#### Docker:
-Running docker-compose up
-
 #### Test Run Status
 <p align="center">
 <img src="https://github.com/gsumit1/BitlyCaseStudy/blob/master/TestExecutionResult.JPG">
