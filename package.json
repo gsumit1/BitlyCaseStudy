@@ -4,8 +4,6 @@
   "description": "Bitly Assignment",
   "main": "/cypress/integration/URL-test.spec.js",
   "scripts": {
-    "lint": "eslint ./*.js ./*/src/*.js",
-    "start": "node index",
     "test:e2e:test": "cypress run"
   },
   "author": "Sumit Ghosh",
