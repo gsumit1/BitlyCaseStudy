@@ -4,7 +4,7 @@
   "description": "Bitly Assignment",
   "main": "/cypress/integration/URL-test.spec.js",
   "scripts": {
-    "test:e2e:test": "cypress run"
+    "test:e2e:test": "cypress run --config-file=cypress.config.js"
   },
   "author": "Sumit Ghosh",
   "license": "ISC",
