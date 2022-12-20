@@ -16,7 +16,11 @@ class HomePage{
     constructor() {}
 
 
-
+acceptCookie(){
+    try {
+        cy.xpath("//*[@id=\"onetrust-accept-btn-handler\"]").click({force: true});
+    } catch (error) {}
+}
 setCustomizedDesign(bodyShape,eyeFrameShape, eyeBallShape){
     cy.xpath(bar_customizedDesign).click();
     cy.xpath("//i[@class='sprite sprite-body sprite-"+bodyShape+"']").click();

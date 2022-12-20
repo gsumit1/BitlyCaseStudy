@@ -7,6 +7,7 @@ describe('QR Code URL', () => {
   it('Generate QR Code for URL', () => {
    cy.visit('/#url');
    let url="https://www.lumen.com";
+   urlPage.acceptCookie();
    urlPage.submitQRCode(url);
    urlPage.generateQRCode();
    urlPage.getQRCodeContent().should('have.property', 'text', url);
@@ -14,6 +15,7 @@ describe('QR Code URL', () => {
 
   it('QR Code should not be generated for blank url', () => {
     cy.visit('/#url');
+    urlPage.acceptCookie();
     urlPage.clearQRCodeTextBox();
     urlPage.clickQRCodeBtn();
     urlPage.getErrorCode().should('contain.text','Enter a valid URL');
@@ -24,6 +26,7 @@ describe('QR Code URL', () => {
    it('QR Code should not be generated for incorrect url', () => {
     cy.visit('/#url');
     let url="www.lumen.com";
+    urlPage.acceptCookie();
     urlPage.submitQRCode(url);
     urlPage.clickQRCodeBtn();
     urlPage.getErrorCode().should('contain.text','Enter a valid URL');
@@ -34,6 +37,7 @@ describe('QR Code URL', () => {
    it('Generate QR Code for URL in customized color', () => {
     cy.visit('https://www.qrcode-monkey.com/#url');
     let url="https://www.lumen.com";
+    urlPage.acceptCookie();
     urlPage.submitQRCode(url);
     urlPage.setColors("#1B0FEF","#A0EABC") // rgb(160,234,188), rgb(27, 15, 239)
     urlPage.generateQRCode();
@@ -44,6 +48,7 @@ describe('QR Code URL', () => {
 it('Generate QR Code for URL with twitter logo image and customized color', () => {
   cy.visit('https://www.qrcode-monkey.com/#url');
   let url="https://www.lumen.com";
+  urlPage.acceptCookie();
   urlPage.submitQRCode(url);
   urlPage.setColors("#1B0FEF","#A0EABC") // rgb(160,234,188), rgb(27, 15, 239)
   urlPage.setTitterCircleLogImage('twitter')
@@ -56,6 +61,7 @@ it('Generate QR Code for URL with twitter logo image and customized color', () =
 it('Generate QR Code for URL with template', () => {
   cy.visit('https://www.qrcode-monkey.com/#url');
   let url="https://www.lumen.com";
+  urlPage.acceptCookie();
   urlPage.setTemplate("facebook")
   urlPage.submitQRCode(url);
   urlPage.generateQRCode();
@@ -67,6 +73,7 @@ it('Generate QR Code for URL with template', () => {
 it('Generate QR Code for URL with customized design', () => {
   cy.visit('https://www.qrcode-monkey.com/#url');
   let url="https://www.lumen.com";
+  urlPage.acceptCookie();
   urlPage.submitQRCode(url);
   urlPage.setCustomizedDesign("circle-zebra","frame4","ball5")
   urlPage.generateQRCode();

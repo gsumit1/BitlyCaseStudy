@@ -6,6 +6,7 @@ describe('QRCode for Phone Number', () => {
     cy.fixture('DataFolder/phoneNumber').then(testdata => {
       cy.visit('/');
       let phoneNumber=testdata.telNumber;
+      phonePage.acceptCookie();
       phonePage.openTab("Phone");
       phonePage.submitPhoneNumber(phoneNumber);
       phonePage.generateQRCode();

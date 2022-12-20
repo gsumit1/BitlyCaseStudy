@@ -9,6 +9,7 @@ describe('QRCode for Email', () => {
       let subject=testdata.subject;
       let body=testdata.body;
       let expected='mailto:'+mail+'?subject='+subject+'&body='+body
+      emailPage.acceptCookie();
       emailPage.openEmailTab();
       emailPage.submitEmail(mail,subject, body)
       emailPage.generateQRCode();

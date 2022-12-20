@@ -8,6 +8,7 @@ describe('Generate QR Code for Text', () => {
         testdata.forEach(data => {                  
             cy.visit('https://www.qrcode-monkey.com/#url');
             var textString=data.text;
+            textPage.acceptCookie();
             textPage.openTextTab();
             textPage.submitText(textString);
             textPage.generateQRCode();
@@ -18,6 +19,7 @@ describe('Generate QR Code for Text', () => {
 
   it('No QR Code should be generated for blank text', () => {
     cy.visit('https://www.qrcode-monkey.com/#url');
+    textPage.acceptCookie();
     textPage.openTextTab();
     textPage.clickQRCodeBtn();
     textPage.getErrorCode().should('contain.text','This field is required');

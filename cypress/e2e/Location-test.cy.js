@@ -9,6 +9,7 @@ describe('QRCode for Location', () => {
       let Latitude=testdata.Latitude
       let Longitude=testdata.Longitude
       let expected='https://maps.google.com/local?q='+Latitude+','+Longitude
+      addressPage.acceptCookie();
       addressPage.openTab("Location")
       addressPage.submitAddress(Search_Your_Address,Latitude, Longitude)
       addressPage.generateQRCode();
